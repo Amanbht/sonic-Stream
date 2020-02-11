@@ -1,0 +1,707 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.oxoo.spagreen"
+4    android:versionCode="14"
+5    android:versionName="1.1.4" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="17"
+8-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="28" />
+9-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml
+10
+11    <uses-feature
+11-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:7:5-9:36
+12        android:name="android.software.leanback"
+12-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:8:9-49
+13        android:required="false" />
+13-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:9:9-33
+14    <uses-feature
+14-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:10:5-12:36
+15        android:name="android.hardware.touchscreen"
+15-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:11:9-52
+16        android:required="false" />
+16-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:12:9-33
+17
+18    <uses-permission android:name="android.permission.INTERNET" />
+18-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:14:5-67
+18-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:14:22-64
+19    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+19-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:15:5-79
+19-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:15:22-76
+20    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+20-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:16:5-80
+20-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:16:22-77
+21    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+21-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:17:5-80
+21-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:17:22-77
+22    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+22-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:18:5-81
+22-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:18:22-78
+23    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+23-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:19:5-81
+23-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:19:22-78
+24
+25    <!-- need for startapp -->
+26    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+26-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:22:5-81
+26-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:22:22-78
+27    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+27-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:23:5-79
+27-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:23:22-76
+28    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+28-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:24:5-81
+28-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:24:22-78
+29    <uses-permission android:name="android.permission.BLUETOOTH" />
+29-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:25:5-68
+29-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:25:22-65
+30
+31    <!-- Create a unique permission for your app and use it so only your app can receive your OneSignal messages. -->
+32    <permission
+32-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:8:5-10:47
+33        android:name="com.oxoo.spagreen.permission.C2D_MESSAGE"
+33-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:9:9-63
+34        android:protectionLevel="signature" />
+34-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:10:9-44
+35
+36    <uses-permission android:name="com.oxoo.spagreen.permission.C2D_MESSAGE" />
+36-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:12:5-79
+36-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:12:22-76
+37    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" /> <!-- Required, makes sure notifications are delivered on time. -->
+37-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:18:5-82
+37-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:18:22-79
+38    <uses-permission android:name="android.permission.WAKE_LOCK" />
+38-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:19:5-68
+38-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:19:22-65
+39    <!--
+40 Required so the device vibrates on receiving a push notification.
+41         Vibration settings of the device still apply.
+42    -->
+43    <uses-permission android:name="android.permission.VIBRATE" /> <!-- START: ShortcutBadger -->
+43-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:24:5-66
+43-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:24:22-63
+44    <!-- Samsung -->
+45    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+45-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:32:5-86
+45-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:32:22-83
+46    <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" /> <!-- HTC -->
+46-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:33:5-87
+46-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:33:22-84
+47    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+47-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:34:5-81
+47-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:34:22-78
+48    <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT" /> <!-- Sony -->
+48-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:35:5-83
+48-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:35:22-80
+49    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
+49-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:36:5-88
+49-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:36:22-85
+50    <uses-permission android:name="com.sonymobile.home.permission.PROVIDER_INSERT_BADGE" /> <!-- Apex -->
+50-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:37:5-92
+50-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:37:22-89
+51    <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT" /> <!-- Solid -->
+51-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:38:5-84
+51-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:38:22-81
+52    <uses-permission android:name="com.majeur.launcher.permission.UPDATE_BADGE" /> <!-- Huawei -->
+52-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:39:5-83
+52-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:39:22-80
+53    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+53-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:40:5-91
+53-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:40:22-88
+54    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+54-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:41:5-92
+54-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:41:22-89
+55    <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" /> <!-- ZUK -->
+55-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:42:5-93
+55-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:42:22-90
+56    <uses-permission android:name="android.permission.READ_APP_BADGE" /> <!-- OPPO -->
+56-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:43:5-73
+56-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:43:22-70
+57    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS" />
+57-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:44:5-82
+57-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:44:22-79
+58    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS" /> <!-- EvMe -->
+58-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:45:5-83
+58-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:45:22-80
+59    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_READ" />
+59-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:46:5-88
+59-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:46:22-85
+60    <uses-permission android:name="me.everything.badger.permission.BADGE_COUNT_WRITE" />
+60-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:47:5-89
+60-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:47:22-86
+61    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+61-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:26:5-110
+61-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:26:22-107
+62
+63    <application
+63-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:28:5-118:19
+64        android:name="com.oxoo.spagreen.utils.MyAppClass"
+64-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:29:9-41
+65        android:allowBackup="true"
+65-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:30:9-35
+66        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+66-->[androidx.core:core:1.1.0-beta01] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\4f4c0f6878796ada8586d37df63cf945\core-1.1.0-beta01\AndroidManifest.xml:22:18-86
+67        android:debuggable="true"
+68        android:icon="@mipmap/ic_launcher"
+68-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:31:9-43
+69        android:label="@string/app_name"
+69-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:32:9-41
+70        android:roundIcon="@mipmap/ic_launcher_round"
+70-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:33:9-54
+71        android:supportsRtl="true"
+71-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:34:9-35
+72        android:testOnly="true"
+73        android:theme="@style/AppTheme"
+73-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:35:9-40
+74        android:usesCleartextTraffic="true" >
+74-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:36:9-44
+75        <activity
+75-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:38:9-40:63
+76            android:name="com.oxoo.spagreen.WebViewActivity"
+76-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:38:19-50
+77            android:screenOrientation="landscape"
+77-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:39:13-50
+78            android:theme="@style/FullscreenTheme" />
+78-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:40:13-51
+79
+80        <meta-data
+80-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:42:9-44:52
+81            android:name="com.google.android.gms.ads.APPLICATION_ID"
+81-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:43:13-69
+82            android:value="@string/admob_app_id" />
+82-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:44:13-49
+83        <meta-data
+83-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:45:9-47:39
+84            android:name="com.onesignal.NotificationOpened.DEFAULT"
+84-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:46:13-68
+85            android:value="DISABLE" />
+85-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:47:13-36
+86        <meta-data
+86-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:48:9-50:97
+87            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+87-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:49:13-93
+88            android:value="com.google.android.exoplayer2.ext.cast.DefaultCastOptionsProvider" />
+88-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:50:13-94
+89
+90        <activity
+90-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:52:9-55:53
+91            android:name="com.oxoo.spagreen.TermsActivity"
+91-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:53:13-42
+92            android:screenOrientation="portrait"
+92-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:54:13-49
+93            android:theme="@style/AppTheme.Nobar" />
+93-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:55:13-50
+94        <activity
+94-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:56:9-60:59
+95            android:name="com.oxoo.spagreen.ReplyActivity"
+95-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:57:13-42
+96            android:label="@string/title_activity_reply"
+96-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:58:13-57
+97            android:screenOrientation="portrait"
+97-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:59:13-49
+98            android:theme="@style/AppTheme.NoActionBar" />
+98-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:60:13-56
+99        <activity
+99-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:61:9-64:53
+100            android:name="com.oxoo.spagreen.ProfileActivity"
+100-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:62:13-44
+101            android:screenOrientation="portrait"
+101-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:63:13-49
+102            android:theme="@style/AppTheme.Nobar" />
+102-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:64:13-50
+103        <activity
+103-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:65:9-68:53
+104            android:name="com.oxoo.spagreen.PassResetActivity"
+104-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:66:13-46
+105            android:screenOrientation="portrait"
+105-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:67:13-49
+106            android:theme="@style/AppTheme.Nobar" />
+106-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:68:13-50
+107        <activity
+107-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:69:9-72:53
+108            android:name="com.oxoo.spagreen.SearchActivity"
+108-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:70:13-43
+109            android:screenOrientation="portrait"
+109-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:71:13-49
+110            android:theme="@style/AppTheme.Nobar" />
+110-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:72:13-50
+111        <activity
+111-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:73:9-76:53
+112            android:name="com.oxoo.spagreen.SignUpActivity"
+112-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:74:13-43
+113            android:screenOrientation="portrait"
+113-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:75:13-49
+114            android:theme="@style/AppTheme.Nobar" />
+114-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:76:13-50
+115        <activity
+115-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:77:9-80:53
+116            android:name="com.oxoo.spagreen.LoginActivity"
+116-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:78:13-42
+117            android:screenOrientation="portrait"
+117-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:79:13-49
+118            android:theme="@style/AppTheme.Nobar" />
+118-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:80:13-50
+119        <activity
+119-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:81:9-85:59
+120            android:name="com.oxoo.spagreen.DetailsActivity"
+120-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:82:13-44
+121            android:configChanges="screenLayout|screenSize|orientation"
+121-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:83:13-72
+122            android:label="@string/title_activity_details"
+122-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:84:13-59
+123            android:theme="@style/AppTheme.NoActionBar" /> <!-- android:configChanges="screenLayout|screenSize|orientation" -->
+123-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:85:13-56
+124        <activity
+124-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:86:9-90:55
+125            android:name="com.oxoo.spagreen.MainActivity"
+125-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:87:13-41
+126            android:screenOrientation="portrait"
+126-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:88:13-49
+127            android:theme="@style/AppTheme.Nobar"
+127-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:89:13-50
+128            android:windowSoftInputMode="adjustPan" />
+128-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:90:13-52
+129        <activity
+129-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:91:9-93:53
+130            android:name="com.oxoo.spagreen.SettingsActivity"
+130-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:92:13-45
+131            android:theme="@style/AppTheme.Nobar" />
+131-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:93:13-50
+132        <activity
+132-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:94:9-104:20
+133            android:name="com.oxoo.spagreen.SplashscreenActivity"
+133-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:95:13-49
+134            android:configChanges="orientation|keyboardHidden|screenSize"
+134-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:96:13-74
+135            android:screenOrientation="portrait"
+135-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:97:13-49
+136            android:theme="@style/FullscreenTheme" >
+136-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:98:13-51
+137            <intent-filter>
+137-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:99:13-103:29
+138                <action android:name="android.intent.action.MAIN" />
+138-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:100:17-69
+138-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:100:25-66
+139
+140                <category android:name="android.intent.category.LAUNCHER" />
+140-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:102:17-77
+140-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:102:27-74
+141            </intent-filter>
+142        </activity>
+143        <activity
+143-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:105:9-109:59
+144            android:name="com.oxoo.spagreen.ItemMovieActivity"
+144-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:106:13-46
+145            android:label="@string/title_activity_item_show"
+145-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:107:13-61
+146            android:screenOrientation="portrait"
+146-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:108:13-49
+147            android:theme="@style/AppTheme.NoActionBar" />
+147-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:109:13-56
+148        <activity
+148-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:110:9-113:53
+149            android:name="com.oxoo.spagreen.ItemTVActivity"
+149-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:111:13-43
+150            android:screenOrientation="portrait"
+150-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:112:13-49
+151            android:theme="@style/AppTheme.Nobar" />
+151-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:113:13-50
+152        <activity
+152-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:114:9-117:53
+153            android:name="com.oxoo.spagreen.ItemSeriesActivity"
+153-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:115:13-47
+154            android:screenOrientation="portrait"
+154-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:116:13-49
+155            android:theme="@style/AppTheme.Nobar" />
+155-->D:\app\OXOO 114\app\src\main\AndroidManifest.xml:117:13-50
+156
+157        <receiver
+157-->[com.google.android.gms:play-services-cast-framework:15.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\3de3eaa832516e3b32193c472313caf9\jetified-play-services-cast-framework-15.0.1\AndroidManifest.xml:8:9-10:40
+158            android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver"
+158-->[com.google.android.gms:play-services-cast-framework:15.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\3de3eaa832516e3b32193c472313caf9\jetified-play-services-cast-framework-15.0.1\AndroidManifest.xml:9:13-91
+159            android:exported="false" />
+159-->[com.google.android.gms:play-services-cast-framework:15.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\3de3eaa832516e3b32193c472313caf9\jetified-play-services-cast-framework-15.0.1\AndroidManifest.xml:10:13-37
+160
+161        <service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService" />
+161-->[com.google.android.gms:play-services-cast-framework:15.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\3de3eaa832516e3b32193c472313caf9\jetified-play-services-cast-framework-15.0.1\AndroidManifest.xml:12:9-104
+161-->[com.google.android.gms:play-services-cast-framework:15.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\3de3eaa832516e3b32193c472313caf9\jetified-play-services-cast-framework-15.0.1\AndroidManifest.xml:12:18-101
+162        <service android:name="com.google.android.gms.cast.framework.ReconnectionService" />
+162-->[com.google.android.gms:play-services-cast-framework:15.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\3de3eaa832516e3b32193c472313caf9\jetified-play-services-cast-framework-15.0.1\AndroidManifest.xml:13:9-93
+162-->[com.google.android.gms:play-services-cast-framework:15.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\3de3eaa832516e3b32193c472313caf9\jetified-play-services-cast-framework-15.0.1\AndroidManifest.xml:13:18-90
+163
+164        <meta-data
+164-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:50:9-52:51
+165            android:name="onesignal_app_id"
+165-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:51:13-44
+166            android:value="00000000-0000-0000-0000-000000000000" /> <!-- Deprecated - Pulled from OneSignal dashboard. -->
+166-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:52:13-48
+167        <meta-data
+167-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:54:9-56:70
+168            android:name="onesignal_google_project_number"
+168-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:55:13-59
+169            android:value="str:REMOTE" />
+169-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:56:13-67
+170
+171        <receiver
+171-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:58:9-68:20
+172            android:name="com.onesignal.GcmBroadcastReceiver"
+172-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:59:13-62
+173            android:permission="com.google.android.c2dm.permission.SEND" >
+173-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:60:13-73
+174
+175            <!-- High priority so OneSignal payloads can be filtered from other GCM receivers if filterOtherGCMReceivers is enabled. -->
+176            <intent-filter android:priority="999" >
+176-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:63:13-67:29
+176-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:63:28-50
+177                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+177-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:64:17-81
+177-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:64:25-78
+178
+179                <category android:name="com.oxoo.spagreen" />
+179-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:66:17-61
+179-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:66:27-58
+180            </intent-filter>
+181        </receiver>
+182        <receiver android:name="com.onesignal.NotificationOpenedReceiver" />
+182-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:69:9-77
+182-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:69:19-74
+183
+184        <service android:name="com.onesignal.GcmIntentService" />
+184-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:71:9-66
+184-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:71:18-63
+185        <service
+185-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:72:9-74:72
+186            android:name="com.onesignal.GcmIntentJobService"
+186-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:73:13-61
+187            android:permission="android.permission.BIND_JOB_SERVICE" />
+187-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:74:13-69
+188        <service
+188-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:75:9-77:72
+189            android:name="com.onesignal.RestoreJobService"
+189-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:76:13-59
+190            android:permission="android.permission.BIND_JOB_SERVICE" />
+190-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:77:13-69
+191        <service
+191-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:78:9-80:72
+192            android:name="com.onesignal.RestoreKickoffJobService"
+192-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:79:13-66
+193            android:permission="android.permission.BIND_JOB_SERVICE" />
+193-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:80:13-69
+194        <service
+194-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:81:9-83:43
+195            android:name="com.onesignal.SyncService"
+195-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:82:13-53
+196            android:stopWithTask="true" />
+196-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:83:13-40
+197        <service
+197-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:84:9-86:72
+198            android:name="com.onesignal.SyncJobService"
+198-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:85:13-56
+199            android:permission="android.permission.BIND_JOB_SERVICE" />
+199-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:86:13-69
+200
+201        <activity
+201-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:88:9-90:75
+202            android:name="com.onesignal.PermissionsActivity"
+202-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:89:13-61
+203            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+203-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:90:13-72
+204
+205        <service android:name="com.onesignal.NotificationRestoreService" />
+205-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:92:9-76
+205-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:92:18-73
+206
+207        <receiver android:name="com.onesignal.BootUpReceiver" >
+207-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:94:9-99:20
+207-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:94:19-62
+208            <intent-filter>
+208-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:95:13-98:29
+209                <action android:name="android.intent.action.BOOT_COMPLETED" />
+209-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:96:17-79
+209-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:96:25-76
+210                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+210-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:97:17-82
+210-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:97:25-79
+211            </intent-filter>
+212        </receiver>
+213        <receiver android:name="com.onesignal.UpgradeReceiver" >
+213-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:100:9-104:20
+213-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:100:19-63
+214            <intent-filter>
+214-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:101:13-103:29
+215                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+215-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:102:17-84
+215-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:102:25-81
+216            </intent-filter>
+217        </receiver>
+218
+219        <activity
+219-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:15:9-19:75
+220            android:name="com.facebook.ads.AudienceNetworkActivity"
+220-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:16:13-68
+221            android:configChanges="keyboardHidden|orientation|screenSize"
+221-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:17:13-74
+222            android:exported="false"
+222-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:18:13-37
+223            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+223-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:19:13-72
+224        <activity
+224-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:20:9-25:75
+225            android:name="com.facebook.ads.internal.ipc.RemoteANActivity"
+225-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:21:13-74
+226            android:configChanges="keyboardHidden|orientation|screenSize"
+226-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:22:13-74
+227            android:exported="false"
+227-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:23:13-37
+228            android:process=":adnw"
+228-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:24:13-36
+229            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+229-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:25:13-72
+230
+231        <service
+231-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:27:9-29:40
+232            android:name="com.facebook.ads.internal.ipc.AdsProcessPriorityService"
+232-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:28:13-83
+233            android:exported="false" />
+233-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:29:13-37
+234        <service
+234-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:30:9-33:39
+235            android:name="com.facebook.ads.internal.ipc.AdsMessengerService"
+235-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:31:13-77
+236            android:exported="false"
+236-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:32:13-37
+237            android:process=":adnw" />
+237-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:33:13-36
+238
+239        <provider
+239-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:35:9-38:40
+240            android:name="com.facebook.ads.AudienceNetworkContentProvider"
+240-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:36:13-75
+241            android:authorities="com.oxoo.spagreen.AudienceNetworkContentProvider"
+241-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:37:13-82
+242            android:exported="false" />
+242-->[com.facebook.android:audience-network-sdk:5.6.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\105f10e6ad384bdf321936097121aaf6\jetified-audience-network-sdk-5.6.1\AndroidManifest.xml:38:13-37
+243        <!--
+244             FirebaseMessagingService performs security checks at runtime,
+245             no need for explicit permissions despite exported="true"
+246        -->
+247        <service
+247-->[com.google.firebase:firebase-messaging:17.3.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\a5803509ef01f7769c7021364c377d8a\jetified-firebase-messaging-17.3.3\AndroidManifest.xml:28:9-34:19
+248            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+248-->[com.google.firebase:firebase-messaging:17.3.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\a5803509ef01f7769c7021364c377d8a\jetified-firebase-messaging-17.3.3\AndroidManifest.xml:29:13-82
+249            android:exported="true" >
+249-->[com.google.firebase:firebase-messaging:17.3.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\a5803509ef01f7769c7021364c377d8a\jetified-firebase-messaging-17.3.3\AndroidManifest.xml:30:13-36
+250            <intent-filter android:priority="-500" >
+250-->[com.google.firebase:firebase-messaging:17.3.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\a5803509ef01f7769c7021364c377d8a\jetified-firebase-messaging-17.3.3\AndroidManifest.xml:31:13-33:29
+250-->[com.google.firebase:firebase-messaging:17.3.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\a5803509ef01f7769c7021364c377d8a\jetified-firebase-messaging-17.3.3\AndroidManifest.xml:31:28-51
+251                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+251-->[com.google.firebase:firebase-messaging:17.3.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\a5803509ef01f7769c7021364c377d8a\jetified-firebase-messaging-17.3.3\AndroidManifest.xml:32:17-78
+251-->[com.google.firebase:firebase-messaging:17.3.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\a5803509ef01f7769c7021364c377d8a\jetified-firebase-messaging-17.3.3\AndroidManifest.xml:32:25-75
+252            </intent-filter>
+253        </service>
+254
+255        <receiver
+255-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:29:9-33:20
+256            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+256-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:30:13-85
+257            android:enabled="true"
+257-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:31:13-35
+258            android:exported="false" >
+258-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:32:13-37
+259        </receiver>
+260        <receiver
+260-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:34:9-42:20
+261            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+261-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:35:13-100
+262            android:enabled="true"
+262-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:36:13-35
+263            android:exported="true"
+263-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:37:13-36
+264            android:permission="android.permission.INSTALL_PACKAGES" >
+264-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:38:13-69
+265            <intent-filter>
+265-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:39:13-41:29
+266                <action android:name="com.android.vending.INSTALL_REFERRER" />
+266-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:40:17-79
+266-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:40:25-76
+267            </intent-filter>
+268        </receiver>
+269
+270        <service
+270-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:44:9-47:40
+271            android:name="com.google.android.gms.measurement.AppMeasurementService"
+271-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:45:13-84
+272            android:enabled="true"
+272-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:46:13-35
+273            android:exported="false" />
+273-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:47:13-37
+274        <service
+274-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:48:9-52:72
+275            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+275-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:49:13-87
+276            android:enabled="true"
+276-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:50:13-35
+277            android:exported="false"
+277-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:51:13-37
+278            android:permission="android.permission.BIND_JOB_SERVICE" />
+278-->[com.google.android.gms:play-services-measurement:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\49fc135b8d75eb4b81411453b6fe02d2\jetified-play-services-measurement-16.4.0\AndroidManifest.xml:52:13-69
+279        <service
+279-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\ad8d6101966828a22c5c5380752767fa\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:27:9-33:19
+280            android:name="com.google.firebase.components.ComponentDiscoveryService"
+280-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\ad8d6101966828a22c5c5380752767fa\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:28:13-84
+281            android:exported="false" >
+281-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\ad8d6101966828a22c5c5380752767fa\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:29:13-37
+282            <meta-data
+282-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\ad8d6101966828a22c5c5380752767fa\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:30:13-32:85
+283                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+283-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\ad8d6101966828a22c5c5380752767fa\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:31:17-139
+284                android:value="com.google.firebase.components.ComponentRegistrar" />
+284-->[com.google.android.gms:play-services-measurement-api:16.4.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\ad8d6101966828a22c5c5380752767fa\jetified-play-services-measurement-api-16.4.0\AndroidManifest.xml:32:17-82
+285            <meta-data
+285-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:32:13-34:85
+286                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+286-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:33:17-96
+287                android:value="com.google.firebase.components.ComponentRegistrar" />
+287-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:34:17-82
+288        </service> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+289        <activity
+289-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:29:9-33:64
+290            android:name="com.google.android.gms.ads.AdActivity"
+290-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:30:13-65
+291            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+291-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:31:13-122
+292            android:exported="false"
+292-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:32:13-37
+293            android:theme="@android:style/Theme.Translucent" />
+293-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:33:13-61
+294
+295        <provider
+295-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:35:9-39:39
+296            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+296-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:36:13-76
+297            android:authorities="com.oxoo.spagreen.mobileadsinitprovider"
+297-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:37:13-73
+298            android:exported="false"
+298-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:38:13-37
+299            android:initOrder="100" />
+299-->[com.google.android.gms:play-services-ads-lite:17.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\b4ceb594dea5c35c0b685e001f28912d\jetified-play-services-ads-lite-17.2.0\AndroidManifest.xml:39:13-36
+300
+301        <receiver
+301-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:37:9-44:20
+302            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+302-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:38:13-78
+303            android:exported="true"
+303-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:39:13-36
+304            android:permission="com.google.android.c2dm.permission.SEND" >
+304-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:40:13-73
+305            <intent-filter>
+305-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:41:13-43:29
+306                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+306-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:64:17-81
+306-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:64:25-78
+307            </intent-filter>
+308        </receiver>
+309        <!--
+310             FirebaseInstanceIdService performs security checks at runtime,
+311             no need for explicit permissions despite exported="true"
+312        -->
+313        <service
+313-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:50:9-56:19
+314            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+314-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:51:13-77
+315            android:exported="true" >
+315-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:52:13-36
+316            <intent-filter android:priority="-500" >
+316-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:53:13-55:29
+316-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:53:28-51
+317                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+317-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:54:17-80
+317-->[com.google.firebase:firebase-iid:17.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\6d16bc5ef7846d0d461b4eefc36a2489\jetified-firebase-iid-17.0.3\AndroidManifest.xml:54:25-77
+318            </intent-filter>
+319        </service>
+320
+321        <provider
+321-->[com.google.firebase:firebase-common:16.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\e0db3ec861204e8f9f863f03160324d6\jetified-firebase-common-16.0.3\AndroidManifest.xml:10:9-14:39
+322            android:name="com.google.firebase.provider.FirebaseInitProvider"
+322-->[com.google.firebase:firebase-common:16.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\e0db3ec861204e8f9f863f03160324d6\jetified-firebase-common-16.0.3\AndroidManifest.xml:11:13-77
+323            android:authorities="com.oxoo.spagreen.firebaseinitprovider"
+323-->[com.google.firebase:firebase-common:16.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\e0db3ec861204e8f9f863f03160324d6\jetified-firebase-common-16.0.3\AndroidManifest.xml:12:13-72
+324            android:exported="false"
+324-->[com.google.firebase:firebase-common:16.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\e0db3ec861204e8f9f863f03160324d6\jetified-firebase-common-16.0.3\AndroidManifest.xml:13:13-37
+325            android:initOrder="100" />
+325-->[com.google.firebase:firebase-common:16.0.3] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\e0db3ec861204e8f9f863f03160324d6\jetified-firebase-common-16.0.3\AndroidManifest.xml:14:13-36
+326
+327        <activity
+327-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\8f760b3e18e1893d62c7acaa9c50df3d\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+328            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+328-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\8f760b3e18e1893d62c7acaa9c50df3d\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+329            android:exported="false"
+329-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\8f760b3e18e1893d62c7acaa9c50df3d\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+330            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+330-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\8f760b3e18e1893d62c7acaa9c50df3d\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+331
+332        <meta-data
+332-->[com.google.android.gms:play-services-basement:16.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\f0de63e72ab49934cb574541ad75d83b\jetified-play-services-basement-16.2.0\AndroidManifest.xml:23:9-25:69
+333            android:name="com.google.android.gms.version"
+333-->[com.google.android.gms:play-services-basement:16.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\f0de63e72ab49934cb574541ad75d83b\jetified-play-services-basement-16.2.0\AndroidManifest.xml:24:13-58
+334            android:value="@integer/google_play_services_version" />
+334-->[com.google.android.gms:play-services-basement:16.2.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\f0de63e72ab49934cb574541ad75d83b\jetified-play-services-basement-16.2.0\AndroidManifest.xml:25:13-66
+335
+336        <provider
+336-->[com.squareup.picasso:picasso:2.71828] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\2b05c23fe92de2d9e5e7faa059c5e5b9\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+337            android:name="com.squareup.picasso.PicassoProvider"
+337-->[com.squareup.picasso:picasso:2.71828] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\2b05c23fe92de2d9e5e7faa059c5e5b9\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+338            android:authorities="com.oxoo.spagreen.com.squareup.picasso"
+338-->[com.squareup.picasso:picasso:2.71828] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\2b05c23fe92de2d9e5e7faa059c5e5b9\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+339            android:exported="false" />
+339-->[com.squareup.picasso:picasso:2.71828] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\2b05c23fe92de2d9e5e7faa059c5e5b9\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+340
+341        <activity
+341-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:18:9-20:52
+342            android:name="com.startapp.android.publish.ads.list3d.List3DActivity"
+342-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:19:13-82
+343            android:theme="@android:style/Theme" />
+343-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:20:13-49
+344        <activity
+344-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:21:9-24:64
+345            android:name="com.startapp.android.publish.adsCommon.activities.OverlayActivity"
+345-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:22:13-93
+346            android:configChanges="orientation|keyboardHidden|screenSize"
+346-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:23:13-74
+347            android:theme="@android:style/Theme.Translucent" />
+347-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:24:13-61
+348        <activity
+348-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:25:9-28:52
+349            android:name="com.startapp.android.publish.adsCommon.activities.FullScreenActivity"
+349-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:26:13-96
+350            android:configChanges="orientation|keyboardHidden|screenSize"
+350-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:27:13-74
+351            android:theme="@android:style/Theme" />
+351-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:28:13-49
+352
+353        <service android:name="com.startapp.android.publish.common.metaData.PeriodicMetaDataService" />
+353-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:30:9-104
+353-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:30:18-101
+354        <service android:name="com.startapp.android.publish.common.metaData.InfoEventService" />
+354-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:31:9-97
+354-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:31:18-94
+355        <service
+355-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:32:9-34:72
+356            android:name="com.startapp.android.publish.common.metaData.PeriodicJobService"
+356-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:33:13-91
+357            android:permission="android.permission.BIND_JOB_SERVICE" />
+357-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:34:13-69
+358
+359        <receiver android:name="com.startapp.android.publish.common.metaData.BootCompleteListener" >
+359-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:36:9-40:20
+359-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:36:19-99
+360            <intent-filter>
+360-->[com.startapp:inapp-sdk:4.3.0] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\129f77a42b5c80dfe2c45d2bc8a134f8\jetified-inapp-sdk-4.3.0\AndroidManifest.xml:37:13-39:29
+361                <action android:name="android.intent.action.BOOT_COMPLETED" />
+361-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:96:17-79
+361-->[com.onesignal:OneSignal:3.10.5] C:\Users\hteta\.gradle\caches\transforms-2\files-2.1\0b11a1383701cca09596ca686f5f0be5\jetified-OneSignal-3.10.5\AndroidManifest.xml:96:25-76
+362            </intent-filter>
+363        </receiver>
+364    </application>
+365
+366</manifest>

@@ -1,0 +1,4 @@
+# Referenced at D:\app\OXOO 114\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:63
+-keep class androidx.core.app.CoreComponentFactory { <init>(); }
+# Referenced at D:\app\OXOO 114\app\build\intermediates\merged_manifests\debug\AndroidManifest.xml:63
+-keep class com.oxoo.spagreen.utils.MyAppClass { <init>(); }
