@@ -475,6 +475,7 @@
                     </androidx.recyclerview.widget.RecyclerView>
                 </LinearLayout>
                 <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/llcomments"
                     android:padding="10dp"
                     android:orientation="vertical"
