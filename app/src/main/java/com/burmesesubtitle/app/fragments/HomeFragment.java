@@ -142,7 +142,8 @@ public class HomeFragment extends Fragment {
 
         super.onViewCreated(view, savedInstanceState);
 
-        getActivity().setTitle(getResources().getString(R.string.app_title));
+//        getActivity().setTitle(getResources().getString(R.string.app_title));
+        getActivity().setTitle("  ");
         apiResources = new ApiResources();
 
         singleton = new VolleySingleton(getActivity());
