@@ -34,8 +34,52 @@
         android:layout_height="250dp"
         android:focusable="true">
 
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.3"
+            android:contentDescription="THUMBNAIL" />
+
+        <ImageView
+            android:id="@+id/poster"
+            android:contentDescription="POSTER"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/mv_title"
+            android:layout_toRightOf="@id/poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Movie Title"
+            android:textAppearance="@style/TextAppearance.Title"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="40dp"
+            android:layout_alignParentBottom="true" />
+
+
+        <TextView
+            android:id="@+id/imdb_rating"
+            android:layout_toRightOf="@id/poster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.Small"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true" />
+
+
 
         <FrameLayout
+            android:visibility="gone"
             android:id="@+id/player_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -134,6 +178,7 @@
                     android:layout_height="match_parent">
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:visibility="gone"
                         android:id="@+id/rv_server_list"
                         android:layout_width="match_parent"
                         android:nestedScrollingEnabled="false"
