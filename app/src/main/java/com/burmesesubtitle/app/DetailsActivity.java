@@ -9,9 +9,12 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -127,6 +130,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -252,6 +256,9 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
 
     private StartAppAd startAppAd = new StartAppAd(this);
 
+    //poster
+    private  ImageView poster;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -346,6 +353,9 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
         castRv = findViewById(R.id.cast_rv);
         proGuideTv = findViewById(R.id.pro_guide_tv);
         watchLiveTv = findViewById(R.id.watch_live_tv);
+
+        // poster
+        poster = findViewById(R.id.poster);
 
         if (isDark) {
             tvTopLayout.setBackgroundColor(getResources().getColor(R.color.dark));
@@ -1620,6 +1630,21 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
                 swipeRefreshLayout.setRefreshing(false);
                 try {
 
+                    new DownloadImageFromInternet((ImageView) findViewById(R.id.poster))
+                            .execute(response.getString("thumbnail_url"));
+
+                    new DownloadImageFromInternet((ImageView) findViewById(R.id.thumbnail))
+                            .execute(response.getString("poster_url"));
+
+                    TextView mvtitle = (TextView) findViewById(R.id.mv_title);
+//                    TextView rating = (TextView) findViewById(R.id.imdb_rating);
+//
+                    mvtitle.setText(response.getString("title"));
+//
+//                    String year = response.getString("release").substring(0,4);
+//                    rating.setText( year+"  |  IMDB - "+response.getString("imdb_rating")+"/10");
+
+
                     download_check = response.getString("enable_download");
                     castImageUrl = response.getString("thumbnail_url");
                     if (download_check.equals("1")) {
@@ -2352,5 +2377,33 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
         watchLiveTv.setVisibility(VISIBLE);
         liveTv.setVisibility(GONE);
         watchStatusTv.setText(getResources().getString(R.string.watching_catch_up_tv));
+    }
+
+    //donwloadimagefrominternet to set poster and backdrop
+    private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
+        ImageView imageView;
+
+        public DownloadImageFromInternet(ImageView imageView) {
+            this.imageView = imageView;
+
+        }
+
+        protected Bitmap doInBackground(String... urls) {
+            String imageURL = urls[0];
+            Bitmap bimage = null;
+            try {
+                InputStream in = new java.net.URL(imageURL).openStream();
+                bimage = BitmapFactory.decodeStream(in);
+
+            } catch (Exception e) {
+                Log.e("Error Message", e.getMessage());
+                e.printStackTrace();
+            }
+            return bimage;
+        }
+
+        protected void onPostExecute(Bitmap result) {
+            imageView.setImageBitmap(result);
+        }
     }
 }
