@@ -4,7 +4,7 @@
     <!--app_title for main navigation & home title-->
     <string name="app_title">Burmese Subtitle</string>
     <string name="app_version">1.1.3</string>
-    <string name="contact_email">burmesesubtitle@gmail.</string>
+    <string name="contact_email">burmesesubtitle@gmail.com</string>
     <string name="copyright_text">Copyright @ Burmese Subtitle \nAll right reserved</string>
 
     //admob
