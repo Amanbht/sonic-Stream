@@ -1,20 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@color/colorPrimary"
     android:gravity="center"
-    android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".SplashscreenActivity">
 
     <ImageView
-        android:src="@drawable/splash_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scaleType="fitXY"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:src="@drawable/splash_image" />
 
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:text="Burmese Subtitle"
+        android:textAppearance="@style/TextAppearance.Medium.Bold"
+        android:textSize="20sp"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:text="The 1st HEVC Encoder Team"
+        android:textAppearance="@style/TextAppearance.Medium.Bold"
+        android:textSize="20sp"
+        android:textColor="@color/white" />
+
+
+    <com.github.ybq.android.spinkit.SpinKitView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/spin_kit"
+        style="@style/SpinKitView.Circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorAccent" />
 
 </LinearLayout>

@@ -68,7 +68,8 @@ public class TvSeriesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle(getResources().getString(R.string.tv_series));
+//        getActivity().setTitle(getResources().getString(R.string.tv_series));
+        getActivity().setTitle("");
 
         initComponent(view);
 
@@ -144,22 +145,22 @@ public class TvSeriesFragment extends Fragment {
             }
         });
 
-        loadAd();
+//        loadAd();
 
     }
 
     private void loadAd(){
-        if (Constants.IS_ENABLE_AD.equals("1")){
-            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
-                BannerAds.ShowBannerAds(getContext(), adView);
-                PopUpAds.ShowInterstitialAds(getContext());
-            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
-                FanAds.showBanner(getContext(), adView);
-                FanAds.showInterstitialAd(getContext());
-            }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
-                StartappAds.showBannerAd(getContext(), adView);
-            }
-        }
+//        if (Constants.IS_ENABLE_AD.equals("1")){
+//            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
+//                BannerAds.ShowBannerAds(getContext(), adView);
+//                PopUpAds.ShowInterstitialAds(getContext());
+//            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
+//                FanAds.showBanner(getContext(), adView);
+//                FanAds.showInterstitialAd(getContext());
+//            }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
+//                StartappAds.showBannerAd(getContext(), adView);
+//            }
+//        }
 
     }
 

@@ -19,10 +19,10 @@ package com.burmesesubtitle.app;
 public class Config {
 
     // copy your api url from php admin dashboard & paste below
-    public static final String API_SERVER_URL = "https://app.burmesesubtitles.com/api/";
+    public static final String API_SERVER_URL = "http://159.65.221.150/ovoo/api/";
 
     //copy your api key from php admin dashboard & paste below
-    public static final String API_KEY = "p8a8o42diyrn4iq0fwi7vqda";
+    public static final String API_KEY = "3ush8uuy0e8x21pfn0bsj4xi";
 
     //copy your terms url from php admin dashboard & paste below
     public static final String TERMS_URL = "https://app.burmesesubtitles.com/terms/";

@@ -131,14 +131,14 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
-        if (Constants.IS_ENABLE_AD.equals("1")) {
-            if (Constants.ACTIVE_AD_NETWORK.equals("startapp")) {
-
-                SharedPreferences startappPreference = getContext().getSharedPreferences(Constants.APP_CONFIG, MODE_PRIVATE);
-                StartAppSDK.init(getContext(), startappPreference.getString(Constants.STARTAPP_APP_ID, ""), true);
-
-            }
-        }
+//        if (Constants.IS_ENABLE_AD.equals("1")) {
+//            if (Constants.ACTIVE_AD_NETWORK.equals("startapp")) {
+//
+//                SharedPreferences startappPreference = getContext().getSharedPreferences(Constants.APP_CONFIG, MODE_PRIVATE);
+//                StartAppSDK.init(getContext(), startappPreference.getString(Constants.STARTAPP_APP_ID, ""), true);
+//
+//            }
+//        }
 
         super.onViewCreated(view, savedInstanceState);
 
@@ -307,35 +307,35 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadAd() {
-        SharedPreferences preferences = getContext().getSharedPreferences("appConfig", MODE_PRIVATE);
+//        SharedPreferences preferences = getContext().getSharedPreferences("appConfig", MODE_PRIVATE);
 
-        if (Constants.IS_ENABLE_AD.equals("1")){
-            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
-                BannerAds.ShowBannerAds(activity, adView);
-                BannerAds.ShowBannerAds(activity, adView1);
-            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
-                FanAds.showBanner(activity, adView);
-                FanAds.showBanner(activity, adView1);
-                //FanAds.showNativeAd(activity, nativeAdView);
-             }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
-
-                StartAppSDK.setUserConsent (getContext(),
-                        "pas",
-                        System.currentTimeMillis(),
-                        true);
-                StartAppAd.setAutoInterstitialPreferences(
-                        new AutoInterstitialPreferences()
-                                .setSecondsBetweenAds(60)
-                );
-
-                StartAppAd startAppAd = new StartAppAd(getContext());
-                startAppAd.loadAd();
-                startAppAd.showAd();
-
-                StartappAds.showBannerAd(getContext(), adView);
-                StartappAds.showBannerAd(getContext(), adView1);
-            }
-        }
+//        if (Constants.IS_ENABLE_AD.equals("1")){
+//            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
+//                BannerAds.ShowBannerAds(activity, adView);
+//                BannerAds.ShowBannerAds(activity, adView1);
+//            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
+//                FanAds.showBanner(activity, adView);
+//                FanAds.showBanner(activity, adView1);
+//                //FanAds.showNativeAd(activity, nativeAdView);
+//             }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
+//
+//                StartAppSDK.setUserConsent (getContext(),
+//                        "pas",
+//                        System.currentTimeMillis(),
+//                        true);
+//                StartAppAd.setAutoInterstitialPreferences(
+//                        new AutoInterstitialPreferences()
+//                                .setSecondsBetweenAds(60)
+//                );
+//
+//                StartAppAd startAppAd = new StartAppAd(getContext());
+//                startAppAd.loadAd();
+//                startAppAd.showAd();
+//
+//                StartappAds.showBannerAd(getContext(), adView);
+//                StartappAds.showBannerAd(getContext(), adView1);
+//            }
+//        }
 
     }
 

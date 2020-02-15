@@ -64,7 +64,8 @@ public class CountryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getActivity().setTitle(getResources().getString(R.string.country));
+//        getActivity().setTitle(getResources().getString(R.string.country));
+        getActivity().setTitle("");
 
         adView=view.findViewById(R.id.adView);
         coordinatorLayout=view.findViewById(R.id.coordinator_lyt);
@@ -118,23 +119,23 @@ public class CountryFragment extends Fragment {
             }
         });
 
-        loadAd();
+//        loadAd();
 
     }
 
 
     private void loadAd(){
-        if (Constants.IS_ENABLE_AD.equals("1")){
-            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
-                BannerAds.ShowBannerAds(getContext(), adView);
-                PopUpAds.ShowInterstitialAds(getContext());
-            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
-                FanAds.showBanner(getContext(), adView);
-                FanAds.showInterstitialAd(getContext());
-            }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
-                StartappAds.showBannerAd(getContext(), adView);
-            }
-        }
+//        if (Constants.IS_ENABLE_AD.equals("1")){
+//            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
+//                BannerAds.ShowBannerAds(getContext(), adView);
+//                PopUpAds.ShowInterstitialAds(getContext());
+//            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
+//                FanAds.showBanner(getContext(), adView);
+//                FanAds.showInterstitialAd(getContext());
+//            }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
+//                StartappAds.showBannerAd(getContext(), adView);
+//            }
+//        }
 
     }
 

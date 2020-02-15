@@ -2,61 +2,55 @@ package com.burmesesubtitle.app;
 
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
-import com.burmesesubtitle.app.utils.Constants;
+import com.burmesesubtitle.app.MainActivity;
+import com.burmesesubtitle.app.R;
+import com.github.ybq.android.spinkit.SpinKitView;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
+import com.github.ybq.android.spinkit.style.FadingCircle;
 
 
 public class SplashscreenActivity extends AppCompatActivity {
 
     private int SPLASH_TIME = 2000;
+    private ProgressBar progressBar;
+    int progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         setContentView(R.layout.activity_splashscreen);
 
-        //Toast.makeText(SplashscreenActivity.this, "login:"+ isLogedIn(), Toast.LENGTH_SHORT).show();
-        Thread timer = new Thread() {
+
+
+        ProgressBar progressBar = (ProgressBar)findViewById(R.id.spin_kit);
+        Sprite fadingCircle = new FadingCircle();
+        progressBar.setIndeterminateDrawable(fadingCircle);
+
+
+        Thread thred = new Thread(new Runnable() {
+            @Override
             public void run() {
-                try {
-                    sleep(SPLASH_TIME);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                } finally {
-                    if (isLogedIn()) {
-                        startActivity(new Intent(SplashscreenActivity.this,MainActivity.class));
-                        finish();
-                    } else {
-                        if (!Constants.IS_LOGIN_MANDATORY) {
-                            Intent intent = new Intent(SplashscreenActivity.this,MainActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                            startActivity(intent);
-
-                        } else {
-                            startActivity(new Intent(SplashscreenActivity.this,LoginActivity.class));
-                        }
-                        finish();
-                    }
-
-                }
-            }
-        };
-        timer.start();
-
+                doWork();
+                startApp();
+            }});
+        thred.start();
     }
-
-    public boolean isLogedIn() {
-        SharedPreferences preferences = getSharedPreferences("user", MODE_PRIVATE);
-        return preferences.getBoolean("status", false);
-
+    public void doWork() {
+        for (progress=20;progress<100;progress=progress+20){
+            try {
+                Thread.sleep(1000);
+//                    progressBar.setProgress(progress);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }} }
+    public void startApp(){
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
+        finish();
     }
-
 }

@@ -264,20 +264,20 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
 
         //startapp
 
-        if (Constants.IS_ENABLE_AD.equals("1")) {
-            if (Constants.ACTIVE_AD_NETWORK.equals("startapp")) {
-
-                SharedPreferences startappPreference = this.getSharedPreferences(Constants.APP_CONFIG, MODE_PRIVATE);
-                StartAppSDK.init(this, startappPreference.getString(Constants.STARTAPP_APP_ID, ""), true);
-                StartAppAd.showSplash(this, savedInstanceState,
-                        new SplashConfig()
-                                .setTheme(SplashConfig.Theme.OCEAN)
-                                .setAppName(getResources().getString(R.string.app_name))
-                                .setLogo(R.drawable.logo)   // resource ID
-                                .setOrientation(SplashConfig.Orientation.PORTRAIT)
-                );
-            }
-        }
+//        if (Constants.IS_ENABLE_AD.equals("1")) {
+//            if (Constants.ACTIVE_AD_NETWORK.equals("startapp")) {
+//
+//                SharedPreferences startappPreference = this.getSharedPreferences(Constants.APP_CONFIG, MODE_PRIVATE);
+//                StartAppSDK.init(this, startappPreference.getString(Constants.STARTAPP_APP_ID, ""), true);
+//                StartAppAd.showSplash(this, savedInstanceState,
+//                        new SplashConfig()
+//                                .setTheme(SplashConfig.Theme.OCEAN)
+//                                .setAppName(getResources().getString(R.string.app_name))
+//                                .setLogo(R.drawable.logo)   // resource ID
+//                                .setOrientation(SplashConfig.Orientation.PORTRAIT)
+//                );
+//            }
+//        }
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("push", MODE_PRIVATE);
@@ -821,19 +821,19 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
     private void loadAd() {
         SharedPreferences preferences = getSharedPreferences(Constants.APP_CONFIG, MODE_PRIVATE);
 
-        if (Constants.IS_ENABLE_AD.equals("1")){
-            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
-                BannerAds.ShowBannerAds(this, adView);
-                PopUpAds.ShowInterstitialAds(this);
-            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
-                FanAds.showBanner(this, adView);
-                FanAds.showInterstitialAd(this);
-             }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
-                startAppAd.loadAd();
-                startAppAd.showAd();
-                StartappAds.showBannerAd(this, adView);
-            }
-        }
+//        if (Constants.IS_ENABLE_AD.equals("1")){
+//            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
+//                BannerAds.ShowBannerAds(this, adView);
+//                PopUpAds.ShowInterstitialAds(this);
+//            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
+//                FanAds.showBanner(this, adView);
+//                FanAds.showInterstitialAd(this);
+//             }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
+//                startAppAd.loadAd();
+//                startAppAd.showAd();
+//                StartappAds.showBannerAd(this, adView);
+//            }
+//        }
 
     }
 
@@ -1477,6 +1477,22 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
                     tvRelease.setText("Release On " + response.getString("release"));
                     tvDes.setText(response.getString("description"));
 
+                    new DownloadImageFromInternet((ImageView) findViewById(R.id.poster))
+                            .execute(response.getString("thumbnail_url"));
+
+                    new DownloadImageFromInternet((ImageView) findViewById(R.id.thumbnail))
+                            .execute(response.getString("poster_url"));
+
+                    TextView mvtitle = (TextView) findViewById(R.id.mv_title);
+//                    TextView rating = (TextView) findViewById(R.id.imdb_rating);
+//
+                    mvtitle.setText(response.getString("title"));
+//
+//                    String year = response.getString("release").substring(0,4);
+//                    rating.setText( year+"  |  IMDB - "+response.getString("imdb_rating")+"/10");
+
+
+
                     download_check = response.getString("enable_download");
                     if (download_check.equals("1")) {
                         downloadIv.setVisibility(VISIBLE);
@@ -1619,7 +1635,7 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
         strGenre = "";
 
 
-        String url = new ApiResources().getDetails() + type + id;
+        final String url = new ApiResources().getDetails() + type + id;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -1637,12 +1653,12 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
                             .execute(response.getString("poster_url"));
 
                     TextView mvtitle = (TextView) findViewById(R.id.mv_title);
-//                    TextView rating = (TextView) findViewById(R.id.imdb_rating);
-//
                     mvtitle.setText(response.getString("title"));
-//
-//                    String year = response.getString("release").substring(0,4);
-//                    rating.setText( year+"  |  IMDB - "+response.getString("imdb_rating")+"/10");
+
+                    TextView rating = (TextView) findViewById(R.id.imdb_rating);
+                    String year = response.getString("release").substring(0,4);
+
+                    rating.setText( year+"  |  IMDB - "+response.getString("imdb_rating")+"/10");
 
 
                     download_check = response.getString("enable_download");

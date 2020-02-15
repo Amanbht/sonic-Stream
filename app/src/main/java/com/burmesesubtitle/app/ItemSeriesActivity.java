@@ -156,23 +156,23 @@ public class ItemSeriesActivity extends AppCompatActivity {
             }
         });
 
-        loadAd();
+//        loadAd();
 
 
     }
 
     private void loadAd(){
-        if (Constants.IS_ENABLE_AD.equals("1")){
-            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
-                BannerAds.ShowBannerAds(this, adView);
-                PopUpAds.ShowInterstitialAds(this);
-            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
-                FanAds.showBanner(this, adView);
-                FanAds.showInterstitialAd(this);
-            }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
-                StartappAds.showBannerAd( this, adView);
-            }
-        }
+//        if (Constants.IS_ENABLE_AD.equals("1")){
+//            if (Constants.ACTIVE_AD_NETWORK.equals("admob")){
+//                BannerAds.ShowBannerAds(this, adView);
+//                PopUpAds.ShowInterstitialAds(this);
+//            }else if (Constants.ACTIVE_AD_NETWORK.equals("fan")){
+//                FanAds.showBanner(this, adView);
+//                FanAds.showInterstitialAd(this);
+//            }else if (Constants.ACTIVE_AD_NETWORK.equals("startapp")){
+//                StartappAds.showBannerAd( this, adView);
+//            }
+//        }
     }
 
     private void getData(String url,int pageNum){
