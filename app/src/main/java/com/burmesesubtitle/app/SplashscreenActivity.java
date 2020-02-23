@@ -11,6 +11,7 @@ import com.github.ybq.android.spinkit.SpinKitView;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.github.ybq.android.spinkit.style.FadingCircle;
+import com.github.ybq.android.spinkit.style.ThreeBounce;
 
 
 public class SplashscreenActivity extends AppCompatActivity {
@@ -27,9 +28,11 @@ public class SplashscreenActivity extends AppCompatActivity {
 
 
 
-        ProgressBar progressBar = (ProgressBar)findViewById(R.id.spin_kit);
-        Sprite fadingCircle = new FadingCircle();
-        progressBar.setIndeterminateDrawable(fadingCircle);
+        ProgressBar progressBar = (ProgressBar)findViewById(R.id.progress);
+//        Sprite fadingCircle = new FadingCircle();
+//        progressBar.setIndeterminateDrawable(fadingCircle);
+        Sprite threeBounce = new ThreeBounce();
+        progressBar.setIndeterminateDrawable(threeBounce);
 
 
         Thread thred = new Thread(new Runnable() {
@@ -47,7 +50,8 @@ public class SplashscreenActivity extends AppCompatActivity {
 //                    progressBar.setProgress(progress);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }} }
+            }}
+    }
     public void startApp(){
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);

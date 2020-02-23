@@ -359,11 +359,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="380dp"
-                android:layout_alignParentBottom="true"
-                android:src="@drawable/bg_no_item_city" />
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="380dp"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:src="@drawable/bg_no_item_city" />-->
 
             <LinearLayout
                 android:layout_width="250dp"
