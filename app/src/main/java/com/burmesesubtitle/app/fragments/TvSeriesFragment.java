@@ -20,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.burmesesubtitle.app.MainActivity;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.burmesesubtitle.app.R;
 import com.burmesesubtitle.app.adapters.CommonGridAdapter;
@@ -68,8 +69,8 @@ public class TvSeriesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        getActivity().setTitle(getResources().getString(R.string.tv_series));
-        getActivity().setTitle("");
+        getActivity().setTitle(getResources().getString(R.string.tv_series));
+        ((MainActivity)getActivity()).hideImage();
 
         initComponent(view);
 

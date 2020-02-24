@@ -144,6 +144,7 @@ public class HomeFragment extends Fragment {
 
 //        getActivity().setTitle(getResources().getString(R.string.app_title));
         getActivity().setTitle("  ");
+        ((MainActivity)getActivity()).showImage();
         apiResources = new ApiResources();
 
         singleton = new VolleySingleton(getActivity());

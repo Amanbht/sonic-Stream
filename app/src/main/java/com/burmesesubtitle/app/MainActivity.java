@@ -15,6 +15,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -32,6 +34,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
     private LinearLayout navHeaderLayout;
+    private ImageView appBarImage;
 
     private RecyclerView recyclerView;
     private NavigationAdapter mAdapter;
@@ -125,6 +129,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //----navDrawer------------------------
         toolbar = findViewById(R.id.toolbar);
+        appBarImage = findViewById(R.id.appBarImage);
+
         if (!isDark) {
             toolbar.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
             navHeaderLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
@@ -312,6 +318,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
     }
+
+    public void hideImage(){
+        appBarImage.setVisibility(View.GONE);
+    }
+
+    public void showImage(){
+        appBarImage.setVisibility(View.VISIBLE);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

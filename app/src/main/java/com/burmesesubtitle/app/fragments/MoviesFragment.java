@@ -1,5 +1,6 @@
 package com.burmesesubtitle.app.fragments;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.burmesesubtitle.app.MainActivity;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.burmesesubtitle.app.R;
 import com.burmesesubtitle.app.adapters.CommonGridAdapter;
@@ -70,9 +72,8 @@ public class MoviesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        getActivity().setTitle(getResources().getString(R.string.movie));
-        getActivity().setTitle("");
-
+        getActivity().setTitle(getResources().getString(R.string.movie));
+        ((MainActivity)getActivity()).hideImage();
 
 
         initComponent(view);
