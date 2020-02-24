@@ -147,5 +147,8 @@
     <string name="push_notification">Push Notification</string>
     <string name="others">OTHERS</string>
     <string name="reset_btn_text">Reset</string>
+    <string name="download_txt">Download</string>
+
+
 
 </resources>

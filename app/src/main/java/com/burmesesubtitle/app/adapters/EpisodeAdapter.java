@@ -43,7 +43,8 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.Original
     public void onBindViewHolder(EpisodeAdapter.OriginalViewHolder holder, final int position) {
 
         CommonModels obj = items.get(position);
-        holder.name.setText("Season : "+obj.getTitle());
+        holder.name.setText(obj.getTitle());
+
 
         if (isDark) {
             holder.name.setBackgroundColor(ctx.getResources().getColor(R.color.overlay_dark_20));
@@ -54,7 +55,7 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.Original
         DirectorApater directorApater=new DirectorApater(ctx,obj.getListEpi(),obj.getTitle(), position);
         Log.e("List", String.valueOf(obj.getTitle()));
         LinearLayoutManager layoutManager = new LinearLayoutManager(ctx);
-        layoutManager.setOrientation(RecyclerView.HORIZONTAL);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
         holder.recyclerView.setLayoutManager(layoutManager);
         holder.recyclerView.setHasFixedSize(true);
         holder.recyclerView.setAdapter(directorApater);

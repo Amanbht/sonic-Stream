@@ -861,9 +861,9 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
                 downloadIv.setVisibility(VISIBLE);
 
                 episodeAdapter=new EpisodeAdapter(this,listDirector,isDark);
-                rvServer.setLayoutManager(new LinearLayoutManager(this));
-                rvServer.setHasFixedSize(true);
-                rvServer.setAdapter(episodeAdapter);
+                rvDownload.setLayoutManager(new LinearLayoutManager(this));
+                rvDownload.setHasFixedSize(true);
+                rvDownload.setAdapter(episodeAdapter);
 
                 // cast & crew adapter
                 castCrewAdapter = new CastCrewAdapter(this, castCrews);
@@ -876,12 +876,6 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
 //                epDownload.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
 //                epDownload.setHasFixedSize(true);
 //                epDownload.setAdapter(episodeDownloadAdpter);
-
-                //---download adapter--------
-                downloadAdapter = new DownloadAdapter(this, listDownload);
-                rvDownload.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-                rvDownload.setHasFixedSize(true);
-                rvDownload.setAdapter(downloadAdapter);
 
 
 
@@ -1575,83 +1569,57 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
 
                     download_check = response.getString("enable_download");
 
-                    Log.d("HERE",download_check);
+//                    Log.d("HERE",download_check);
 
-//                    if (download_check.equals("1")) {
-//                        downloadIv.setVisibility(VISIBLE);
-//                        download_text.setVisibility(VISIBLE);
-//                        epDownload.setVisibility(VISIBLE);
-//                    } else {
-//                        downloadIv.setVisibility(GONE);
-//                        download_text.setVisibility(GONE);
-//                        epDownload.setVisibility(GONE);
-//                    }
                     if (download_check.equals("1")) {
-                        //download_text.setVisibility(VISIBLE);
                         downloadIv.setVisibility(VISIBLE);
                         download_text.setVisibility(VISIBLE);
-                        rvDownload.setVisibility(VISIBLE);
+                        epDownload.setVisibility(VISIBLE);
                     } else {
                         downloadIv.setVisibility(GONE);
                         download_text.setVisibility(GONE);
-                        rvDownload.setVisibility(GONE);
+                        epDownload.setVisibility(GONE);
                     }
-
-                    //----download list---------
-                    JSONArray downloadArray = response.getJSONArray("season");
-                    Log.e("Season::", downloadArray.toString());
-                    for (int i = 0; i < downloadArray.length(); i++) {
-                        JSONObject jsonObject = downloadArray.getJSONObject(i);
-
-                        CommonModels models = new CommonModels();
-                        models.setTitle(jsonObject.getString("seasons_name"));
-                        models.setStremURL(jsonObject.getString("download_url"));
-
-                        listDownload.add(models);
-                    }
-
-                    //Toast.makeText(DetailsActivity.this, "download size:"+listDownload.size(), Toast.LENGTH_SHORT).show();
-                    downloadAdapter.notifyDataSetChanged();
 
 
                     //----episode------------
-//                    listDirector.clear();
-//                    epdownloadLink.clear();
-//                    JSONArray mainArray = response.getJSONArray("season");
-//                    for (int i = 0; i < mainArray.length(); i++) {
-//                        //epList.clear()
-//                        JSONObject jsonObject = mainArray.getJSONObject(i);
-//
-//                        CommonModels models = new CommonModels();
-//                        String season_name = jsonObject.getString("seasons_name");
-//                        models.setTitle(jsonObject.getString("seasons_name"));
-//
-//
-//                        Log.e("Season Name 1::", jsonObject.getString("seasons_name"));
-//
-//                        JSONArray episodeArray = jsonObject.getJSONArray("episodes");
-//                        List<EpiModel> epList = new ArrayList<>();
-//                        epList.clear();
-//                        for (int j = 0; j < episodeArray.length(); j++) {
-//
-//                            JSONObject object = episodeArray.getJSONObject(j);
-//
-//                            EpiModel model = new EpiModel();
-//                            model.setSeson(season_name);
-//                            model.setEpi(object.getString("episodes_name"));
-//                            model.setStreamURL(object.getString("file_url"));
-//                            model.setServerType(object.getString("file_type"));
-//                            model.setImageUrl(object.getString("image_url"));
-//                            epList.add(model);
-//
-//                        }
-//                        models.setListEpi(epList);
-//                        listDirector.add(models);
-//                        epdownloadLink.add(models);
-//                        episodeAdapter = new EpisodeAdapter(DetailsActivity.this, listDirector, isDark);
-//                        rvServer.setAdapter(episodeAdapter);
-//
-//                    }
+                    listDirector.clear();
+                    epdownloadLink.clear();
+                    JSONArray mainArray = response.getJSONArray("season");
+                    for (int i = 0; i < mainArray.length(); i++) {
+                        //epList.clear()
+                        JSONObject jsonObject = mainArray.getJSONObject(i);
+
+                        CommonModels models = new CommonModels();
+                        String season_name = jsonObject.getString("seasons_name");
+                        models.setTitle(jsonObject.getString("seasons_name"));
+
+
+                        Log.e("Season Name 1::", jsonObject.getString("seasons_name"));
+
+                        JSONArray episodeArray = jsonObject.getJSONArray("episodes");
+                        List<EpiModel> epList = new ArrayList<>();
+                        epList.clear();
+                        for (int j = 0; j < episodeArray.length(); j++) {
+
+                            JSONObject object = episodeArray.getJSONObject(j);
+
+                            EpiModel model = new EpiModel();
+                            model.setSeson(season_name);
+                            model.setEpi(object.getString("episodes_name"));
+                            model.setStreamURL(object.getString("file_url"));
+                            model.setServerType(object.getString("file_type"));
+                            model.setImageUrl(object.getString("image_url"));
+                            epList.add(model);
+
+                        }
+                        models.setListEpi(epList);
+                        listDirector.add(models);
+                        epdownloadLink.add(models);
+                        episodeAdapter = new EpisodeAdapter(DetailsActivity.this, listDirector, isDark);
+                        rvDownload.setAdapter(episodeAdapter);
+
+                    }
 
 
                 } catch (Exception e) {

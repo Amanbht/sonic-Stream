@@ -492,8 +492,14 @@
                             android:id="@+id/rv_download_list"
                             android:layout_width="match_parent"
                             android:nestedScrollingEnabled="false"
-                            android:visibility="gone"
                             android:layout_height="wrap_content"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/download_link_episode"
+                            android:layout_width="match_parent"
+                            android:nestedScrollingEnabled="false"
+                            android:layout_height="wrap_content"/>
+
 
 
                     </LinearLayout>

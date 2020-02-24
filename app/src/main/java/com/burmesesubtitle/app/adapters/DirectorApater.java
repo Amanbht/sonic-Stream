@@ -3,6 +3,10 @@ package com.burmesesubtitle.app.adapters;
 import android.content.Context;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.graphics.Paint;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,48 +68,54 @@ public class DirectorApater extends RecyclerView.Adapter<DirectorApater.Original
     public void onBindViewHolder(final DirectorApater.OriginalViewHolder holder, final int position) {
 
         final EpiModel obj = items.get(position);
-        holder.name.setText("Episode : "+obj.getEpi());
+        holder.name.setText(obj.getEpi());
+        holder.download_ep.setPaintFlags(holder.name.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-        Picasso.get().load(obj.getImageUrl()).placeholder(R.drawable.poster_placeholder)
-                .into(holder.episodIv);
+//        Picasso.get().load(obj.getImageUrl()).placeholder(R.drawable.poster_placeholder)
+//                .into(holder.episodIv);
+//
 
 
+//        if (seasonNo == 0) {
+//            if (position==i){
+//                chanColor(viewHolderArray[0],position);
+//                ((DetailsActivity)ctx).setMediaUrlForTvSeries(obj.getStreamURL(), obj.getSeson(), obj.getEpi());
+//                new DetailsActivity().iniMoviePlayer(obj.getStreamURL(),obj.getServerType(),ctx);
+//                holder.name.setTextColor(ctx.getResources().getColor(R.color.colorPrimary));
+//                holder.playStatusTv.setText("Playing");
+//                holder.playStatusTv.setVisibility(View.VISIBLE);
+//                viewHolderArray[0] =holder;
+//                i = items.size()+items.size() + items.size();
+//
+//            }
+//        }
 
-        if (seasonNo == 0) {
-            if (position==i){
-                chanColor(viewHolderArray[0],position);
-                ((DetailsActivity)ctx).setMediaUrlForTvSeries(obj.getStreamURL(), obj.getSeson(), obj.getEpi());
-                new DetailsActivity().iniMoviePlayer(obj.getStreamURL(),obj.getServerType(),ctx);
-                holder.name.setTextColor(ctx.getResources().getColor(R.color.colorPrimary));
-                holder.playStatusTv.setText("Playing");
-                holder.playStatusTv.setVisibility(View.VISIBLE);
-                viewHolderArray[0] =holder;
-                i = items.size()+items.size() + items.size();
-
-            }
-        }
-
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        holder.download_ep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((DetailsActivity)ctx).setMediaUrlForTvSeries(obj.getStreamURL(), obj.getSeson(), obj.getEpi());
-                boolean castSession = ((DetailsActivity)ctx).getCastSession();
+//                ((DetailsActivity)ctx).setMediaUrlForTvSeries(obj.getStreamURL(), obj.getSeson(), obj.getEpi());
+//                boolean castSession = ((DetailsActivity)ctx).getCastSession();
                 //Toast.makeText(ctx, "cast:"+castSession, Toast.LENGTH_SHORT).show();
-                if (!castSession) {
-                    new DetailsActivity().iniMoviePlayer(obj.getStreamURL(),obj.getServerType(),ctx);
-                } else {
-                    ((DetailsActivity)ctx).showQueuePopup(ctx, holder.cardView, ((DetailsActivity)ctx).getMediaInfo());
+//                if (!castSession) {
+//                    new DetailsActivity().iniMoviePlayer(obj.getStreamURL(),obj.getServerType(),ctx);
+//                } else {
+//                    ((DetailsActivity)ctx).showQueuePopup(ctx, holder.cardView, ((DetailsActivity)ctx).getMediaInfo());
+//
+//                }
 
-                }
-
-                chanColor(viewHolderArray[0],position);
-                holder.name.setTextColor(ctx.getResources().getColor(R.color.colorPrimary));
-                holder.playStatusTv.setText("Playing");
-                holder.playStatusTv.setVisibility(View.VISIBLE);
-
+//                chanColor(viewHolderArray[0],position);
+//                holder.name.setTextColor(ctx.getResources().getColor(R.color.colorPrimary));
+//                holder.playStatusTv.setText("Playing");
+//                holder.playStatusTv.setVisibility(View.VISIBLE);
+//
 
 
-                viewHolderArray[0] =holder;
+//                viewHolderArray[0] =holder;
+
+                String url = obj.getStreamURL();
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                ctx.startActivity(i);
 
 
             }
@@ -120,25 +130,26 @@ public class DirectorApater extends RecyclerView.Adapter<DirectorApater.Original
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView name, playStatusTv;
+        public TextView name,download_ep, playStatusTv;
         public MaterialRippleLayout cardView;
         public ImageView episodIv;
 
         public OriginalViewHolder(View v) {
             super(v);
             name = v.findViewById(R.id.name);
-            playStatusTv = v.findViewById(R.id.play_status_tv);
+            download_ep = v.findViewById(R.id.download_ep);
+//            playStatusTv = v.findViewById(R.id.play_status_tv);
             cardView=v.findViewById(R.id.lyt_parent);
-            episodIv=v.findViewById(R.id.image);
+//            episodIv=v.findViewById(R.id.image);
         }
     }
 
     private void chanColor(DirectorApater.OriginalViewHolder holder, int pos){
 
-        if (holder!=null){
-            holder.name.setTextColor(ctx.getResources().getColor(R.color.grey_20));
-            holder.playStatusTv.setVisibility(View.GONE);
-        }
+//        if (holder!=null){
+//            holder.name.setTextColor(ctx.getResources().getColor(R.color.grey_20));
+//            holder.playStatusTv.setVisibility(View.GONE);
+//        }
     }
 
 
