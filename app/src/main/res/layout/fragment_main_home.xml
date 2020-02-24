@@ -43,13 +43,13 @@
                 android:padding="@dimen/spacing_medium">
 
                 <ImageButton
-                    android:id="@+id/home"
+                    android:id="@+id/movies"
                     android:layout_width="?attr/actionBarSize"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:tint="@color/colorPrimary"
-                    app:srcCompat="@drawable/outline_home_24"
+                    app:srcCompat="@drawable/outline_movie_24"
                     android:focusable="true" />
 
             </LinearLayout>
@@ -66,13 +66,13 @@
                 android:padding="@dimen/spacing_medium">
 
                 <ImageButton
-                    android:id="@+id/movies"
+                    android:id="@+id/tv_series"
                     android:layout_width="?attr/actionBarSize"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:clickable="true"
                     android:tint="@color/colorPrimary"
-                    app:srcCompat="@drawable/outline_movie_24"
+                    app:srcCompat="@drawable/outline_local_movies_24"
                     android:focusable="true" />
 
             </LinearLayout>
@@ -81,21 +81,21 @@
 
     </LinearLayout>
 
-<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--        android:id="@+id/live_tv"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_centerInParent="true"-->
-<!--        android:layout_marginBottom="15dp"-->
-<!--        android:clickable="true"-->
-<!--        android:tint="@android:color/white"-->
-<!--        app:backgroundTint="@color/colorPrimary"-->
-<!--        app:elevation="2dp"-->
-<!--        app:fabSize="normal"-->
-<!--        app:rippleColor="@color/deep_orange_400"-->
-<!--        app:srcCompat="@drawable/outline_live_tv_24"-->
-<!--        android:focusable="true" />-->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        android:tint="@android:color/white"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="2dp"
+        app:fabSize="normal"
+        app:rippleColor="@color/deep_orange_400"
+        app:srcCompat="@drawable/outline_home_24"
+        android:focusable="true" />
 
     <!--<android.support.design.widget.BottomNavigationView-->
         <!--android:id="@+id/navigation"-->
