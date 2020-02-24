@@ -904,7 +904,7 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
 
                 //---download adapter--------
                 downloadAdapter = new DownloadAdapter(this, listDownload);
-                rvDownload.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+                rvDownload.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
                 rvDownload.setHasFixedSize(true);
                 rvDownload.setAdapter(downloadAdapter);
 
@@ -1569,7 +1569,7 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
 
                     download_check = response.getString("enable_download");
 
-//                    Log.d("HERE",download_check);
+                    Log.d("HERE URL",url);
 
                     if (download_check.equals("1")) {
                         downloadIv.setVisibility(VISIBLE);
@@ -1610,6 +1610,7 @@ public class DetailsActivity extends AppCompatActivity implements CastPlayer.Ses
                             model.setStreamURL(object.getString("file_url"));
                             model.setServerType(object.getString("file_type"));
                             model.setImageUrl(object.getString("image_url"));
+                            model.setFileSize(object.getString("file_size"));
                             epList.add(model);
 
                         }

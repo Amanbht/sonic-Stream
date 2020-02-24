@@ -2,7 +2,9 @@ package com.burmesesubtitle.app.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,13 +48,13 @@ public class DownloadAdapter extends RecyclerView.Adapter<DownloadAdapter.Origin
     public void onBindViewHolder(final DownloadAdapter.OriginalViewHolder holder, final int position) {
 
         final CommonModels obj = items.get(position);
+//        Log.d("OBJ", obj.getFileSize());
         holder.name.setText(obj.getTitle());
-        holder.resolution.setText(obj.getResulation());
         holder.size.setText(obj.getFileSize());
 
+        holder.download.setPaintFlags(holder.download.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
-
-        holder.itemLayout.setOnClickListener(new View.OnClickListener() {
+        holder.download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -75,13 +77,13 @@ public class DownloadAdapter extends RecyclerView.Adapter<DownloadAdapter.Origin
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView name, resolution, size;
+        public TextView name, download, size;
         public LinearLayout itemLayout;
 
         public OriginalViewHolder(View v) {
             super(v);
             name = v.findViewById(R.id.name);
-            resolution = v.findViewById(R.id.resolutaion_tv);
+            download = v.findViewById(R.id.download);
             size = v.findViewById(R.id.size_tv);
             itemLayout=v.findViewById(R.id.item_layout);
         }

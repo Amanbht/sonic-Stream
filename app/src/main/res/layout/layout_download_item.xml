@@ -3,53 +3,69 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="100dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="3dp"
     android:layout_marginBottom="5dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginTop="5dp"
     android:layout_marginLeft="10dp">
 
     <LinearLayout
         android:id="@+id/item_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="15dp"
-        android:gravity="center_horizontal"
-        android:clickable="true"
-        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:weightSum="3"
         android:background="?attr/selectableItemBackgroundBorderless">
 
         <TextView
             android:id="@+id/name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             tools:text="@string/server"
-            android:gravity="center"
             android:textSize="12sp"/>
 
         <TextView
             android:visibility="gone"
             android:id="@+id/resolutaion_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/_1080p"
             android:gravity="center"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="12sp"
-            android:layout_marginTop="5dp"/>
+            android:textSize="12sp" />
+
 
         <TextView
-            android:visibility="gone"
             android:id="@+id/size_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             tools:text="1020 GB"
             android:gravity="center"
             android:textSize="12sp"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"/>
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/download"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:text="@string/download_txt"
+            android:textAlignment="center"
+            android:textColor="@color/light_blue_300" />
+
+        <View
+            android:layout_width="@dimen/spacing_medium"
+            android:layout_height="0dp" />
 
 
 

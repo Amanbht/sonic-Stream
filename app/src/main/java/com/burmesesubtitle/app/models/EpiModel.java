@@ -3,6 +3,8 @@ package com.burmesesubtitle.app.models;
 public class EpiModel {
     String seson,epi,streamURL,serverType, imageUrl;
 
+    public String fileSize;
+
     public String getImageUrl() {
         return imageUrl;
     }
@@ -41,5 +43,13 @@ public class EpiModel {
 
     public void setEpi(String epi) {
         this.epi = epi;
+    }
+
+    public void setFileSize(String fileSize) {
+        this.fileSize = fileSize;
+    }
+
+    public String getFileSize() {
+        return fileSize;
     }
 }

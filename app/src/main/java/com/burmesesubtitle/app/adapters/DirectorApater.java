@@ -69,7 +69,8 @@ public class DirectorApater extends RecyclerView.Adapter<DirectorApater.Original
 
         final EpiModel obj = items.get(position);
         holder.name.setText(obj.getEpi());
-        holder.download_ep.setPaintFlags(holder.name.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        holder.size.setText(obj.getFileSize());
+        holder.download_ep.setPaintFlags(holder.download_ep.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
 //        Picasso.get().load(obj.getImageUrl()).placeholder(R.drawable.poster_placeholder)
 //                .into(holder.episodIv);
@@ -130,7 +131,7 @@ public class DirectorApater extends RecyclerView.Adapter<DirectorApater.Original
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView name,download_ep, playStatusTv;
+        public TextView name,download_ep, size;
         public MaterialRippleLayout cardView;
         public ImageView episodIv;
 
@@ -138,7 +139,7 @@ public class DirectorApater extends RecyclerView.Adapter<DirectorApater.Original
             super(v);
             name = v.findViewById(R.id.name);
             download_ep = v.findViewById(R.id.download_ep);
-//            playStatusTv = v.findViewById(R.id.play_status_tv);
+            size = v.findViewById(R.id.size);
             cardView=v.findViewById(R.id.lyt_parent);
 //            episodIv=v.findViewById(R.id.image);
         }
