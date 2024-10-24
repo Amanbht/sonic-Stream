@@ -1,4 +1,5 @@
 SONIC STREAM
+
 INTRODUCTION OF PROJECT:- 
 Sonic Stream is an amazing android live TV & movie portal application. Which 
 included PHP admin dashboard script. We will able to maintain all of  our changes 
